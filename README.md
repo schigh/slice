@@ -1,8 +1,8 @@
 [![LICENSE](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/schigh/slice.svg?branch=master)](https://travis-ci.org/schigh/slice)
-[![codecov](https://codecov.io/gh/schigh/slices/branch/master/graph/badge.svg?token=hhqA1l88kx)](https://codecov.io/gh/schigh/slices)
+[![Build Status](https://travis-ci.com/schigh/slice.svg?branch=master)](https://travis-ci.com/schigh/slice)
+[![codecov](https://codecov.io/gh/schigh/slice/branch/master/graph/badge.svg)](https://codecov.io/gh/schigh/slice)
 [![Go Report Card](https://goreportcard.com/badge/github.com/schigh/slice)](https://goreportcard.com/report/github.com/schigh/slice)
-[![Godocs](https://img.shields.io/badge/golang-documentation-blue.svg)](https://godoc.org/github.com/schigh/slice)
+[![Godocs](https://img.shields.io/badge/go.dev-docs-blue.svg?logo=go)](https://pkg.go.dev/github.com/schigh/slice)
 
 > Some great and powerful gopher once said you shouldn't put this kind of stuff in a library because it's so simple.  Until you have to write a contains method for the thousandth time.
 
