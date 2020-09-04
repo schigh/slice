@@ -1,0 +1,604 @@
+-------------------------------------------------
+Fri Sep  4 12:15:03 EDT 2020
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkInt_IndexOf/10_elements-12         	185961109	         6.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_IndexOf/100_elements-12        	26206065	        45.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_IndexOf/1000_elements-12       	 3624867	       327 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_IndexOf/10000_elements-12      	  371876	      3144 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_IndexOf/100000_elements-12     	   36693	     32830 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Contains/10_elements-12        	201799839	         5.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Contains/100_elements-12       	25796512	        43.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Contains/1000_elements-12      	 3652878	       325 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Contains/10000_elements-12     	  384649	      3123 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Contains/100000_elements-12    	   36422	     33039 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_SortAsc/10_elements-12         	10651920	       110 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortAsc/100_elements-12        	 2417376	       494 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortAsc/1000_elements-12       	  304825	      3927 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortAsc/10000_elements-12      	   31519	     37880 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortAsc/100000_elements-12     	    2800	    393692 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortDesc/10_elements-12        	10639180	       112 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortDesc/100_elements-12       	 2413137	       510 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortDesc/1000_elements-12      	  302040	      3950 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortDesc/10000_elements-12     	   31570	     37724 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_SortDesc/100000_elements-12    	    2948	    388195 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt_Reverse/10_elements-12         	171435003	         6.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Reverse/100_elements-12        	27227454	        43.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Reverse/1000_elements-12       	 2833893	       422 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Reverse/10000_elements-12      	  281008	      4144 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Reverse/100000_elements-12     	   28490	     41938 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Filter/10_elements-12          	20484286	        53.4 ns/op	      80 B/op	       1 allocs/op
+BenchmarkInt_Filter/100_elements-12         	 3175095	       380 ns/op	     896 B/op	       1 allocs/op
+BenchmarkInt_Filter/1000_elements-12        	  353293	      3384 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkInt_Filter/10000_elements-12       	   34372	     34668 ns/op	   81920 B/op	       1 allocs/op
+BenchmarkInt_Filter/100000_elements-12      	    3379	    332682 ns/op	  802816 B/op	       1 allocs/op
+BenchmarkInt_Each/10_elements-12            	69033172	        17.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Each/100_elements-12           	 7628217	       157 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Each/1000_elements-12          	  804852	      1493 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Each/10000_elements-12         	   80960	     14827 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Each/100000_elements-12        	    7686	    149600 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Map/10_elements-12             	58411677	        20.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Map/100_elements-12            	 6113624	       192 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Map/1000_elements-12           	  635917	      1842 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Map/10000_elements-12          	   64401	     18364 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Map/100000_elements-12         	    5416	    188749 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt_Unique/10_elements-12          	 2592877	       457 ns/op	     259 B/op	       2 allocs/op
+BenchmarkInt_Unique/100_elements-12         	  175555	      6836 ns/op	    4276 B/op	      18 allocs/op
+BenchmarkInt_Unique/1000_elements-12        	   14798	     81180 ns/op	   61572 B/op	      74 allocs/op
+BenchmarkInt_Unique/10000_elements-12       	    1645	    730498 ns/op	  509600 B/op	     320 allocs/op
+BenchmarkInt_Unique/100000_elements-12      	     165	   7156958 ns/op	 4422515 B/op	    3991 allocs/op
+PASS
+ok  	github.com/schigh/slice	63.771s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkInt8_IndexOf/10_elements-12         	187711980	         6.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_IndexOf/100_elements-12        	26234511	        44.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_IndexOf/1000_elements-12       	29518410	        40.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_IndexOf/10000_elements-12      	14305777	        84.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_IndexOf/100000_elements-12     	137261162	         8.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Contains/10_elements-12        	203739079	         6.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Contains/100_elements-12       	27692551	        40.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Contains/1000_elements-12      	25826277	        46.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Contains/10000_elements-12     	12883874	        92.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Contains/100000_elements-12    	54375158	        22.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_SortAsc/10_elements-12         	10966321	       108 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortAsc/100_elements-12        	 2420966	       496 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortAsc/1000_elements-12       	  302504	      3942 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortAsc/10000_elements-12      	   31402	     37691 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortAsc/100000_elements-12     	    3166	    378464 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortDesc/10_elements-12        	10804447	       109 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortDesc/100_elements-12       	 2399587	       499 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortDesc/1000_elements-12      	  302790	      3964 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortDesc/10000_elements-12     	   31790	     37848 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_SortDesc/100000_elements-12    	    3109	    369981 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt8_Reverse/10_elements-12         	170787757	         6.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Reverse/100_elements-12        	27429561	        43.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Reverse/1000_elements-12       	 2798872	       423 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Reverse/10000_elements-12      	  289926	      4169 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Reverse/100000_elements-12     	   28566	     41675 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Filter/10_elements-12          	27350154	        45.2 ns/op	      16 B/op	       1 allocs/op
+BenchmarkInt8_Filter/100_elements-12         	 4382384	       274 ns/op	     112 B/op	       1 allocs/op
+BenchmarkInt8_Filter/1000_elements-12        	  490503	      2477 ns/op	    1024 B/op	       1 allocs/op
+BenchmarkInt8_Filter/10000_elements-12       	   49110	     24423 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkInt8_Filter/100000_elements-12      	    4755	    242084 ns/op	  106496 B/op	       1 allocs/op
+BenchmarkInt8_Each/10_elements-12            	80988031	        14.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Each/100_elements-12           	 8852664	       142 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Each/1000_elements-12          	  936862	      1303 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Each/10000_elements-12         	   84202	     14640 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Each/100000_elements-12        	    9402	    133595 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Map/10_elements-12             	58689972	        20.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Map/100_elements-12            	 6089803	       200 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Map/1000_elements-12           	  605418	      1892 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Map/10000_elements-12          	   62989	     19028 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Map/100000_elements-12         	    5869	    189965 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt8_Unique/10_elements-12          	 1991982	       651 ns/op	      82 B/op	       2 allocs/op
+BenchmarkInt8_Unique/100_elements-12         	  127876	      8728 ns/op	    1383 B/op	      15 allocs/op
+BenchmarkInt8_Unique/1000_elements-12        	   23226	     51623 ns/op	    6113 B/op	      29 allocs/op
+BenchmarkInt8_Unique/10000_elements-12       	    3810	    311478 ns/op	   15335 B/op	      29 allocs/op
+BenchmarkInt8_Unique/100000_elements-12      	     408	   3040458 ns/op	  111585 B/op	      29 allocs/op
+PASS
+ok  	github.com/schigh/slice	63.497s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkInt16_IndexOf/10_elements-12         	184592649	         6.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_IndexOf/100_elements-12        	26434084	        45.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_IndexOf/1000_elements-12       	 3660640	       324 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_IndexOf/10000_elements-12      	  751431	      1568 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_IndexOf/100000_elements-12     	   37459	     32627 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Contains/10_elements-12        	200250462	         6.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Contains/100_elements-12       	26837624	        44.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Contains/1000_elements-12      	 3612903	       330 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Contains/10000_elements-12     	  527106	      2307 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Contains/100000_elements-12    	   37837	     32412 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_SortAsc/10_elements-12         	10380118	       110 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortAsc/100_elements-12        	 2407987	       515 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortAsc/1000_elements-12       	  288924	      3924 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortAsc/10000_elements-12      	   30678	     38732 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortAsc/100000_elements-12     	    3000	    382761 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortDesc/10_elements-12        	10486677	       113 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortDesc/100_elements-12       	 2383185	       497 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortDesc/1000_elements-12      	  307124	      3934 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortDesc/10000_elements-12     	   31969	     37296 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_SortDesc/100000_elements-12    	    3100	    375852 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt16_Reverse/10_elements-12         	169274504	         6.98 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Reverse/100_elements-12        	26183058	        43.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Reverse/1000_elements-12       	 2809284	       424 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Reverse/10000_elements-12      	  290726	      4177 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Reverse/100000_elements-12     	   28872	     41566 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Filter/10_elements-12          	25846256	        45.3 ns/op	      32 B/op	       1 allocs/op
+BenchmarkInt16_Filter/100_elements-12         	 4204233	       286 ns/op	     208 B/op	       1 allocs/op
+BenchmarkInt16_Filter/1000_elements-12        	  459638	      2617 ns/op	    2048 B/op	       1 allocs/op
+BenchmarkInt16_Filter/10000_elements-12       	   46848	     25564 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkInt16_Filter/100000_elements-12      	    4648	    251078 ns/op	  204800 B/op	       1 allocs/op
+BenchmarkInt16_Each/10_elements-12            	79035456	        15.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Each/100_elements-12           	 8658582	       137 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Each/1000_elements-12          	  693645	      1709 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Each/10000_elements-12         	   88408	     13413 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Each/100000_elements-12        	    9228	    130852 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Map/10_elements-12             	58482444	        20.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Map/100_elements-12            	 6198756	       194 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Map/1000_elements-12           	  630409	      1852 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Map/10000_elements-12          	   64171	     18625 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Map/100000_elements-12         	    6385	    188399 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt16_Unique/10_elements-12          	 1945062	       634 ns/op	     114 B/op	       2 allocs/op
+BenchmarkInt16_Unique/100_elements-12         	  136335	      8931 ns/op	    1875 B/op	      18 allocs/op
+BenchmarkInt16_Unique/1000_elements-12        	   10000	    107918 ns/op	   26733 B/op	      52 allocs/op
+BenchmarkInt16_Unique/10000_elements-12       	    1268	    964791 ns/op	  221282 B/op	     210 allocs/op
+BenchmarkInt16_Unique/100000_elements-12      	     176	   6652464 ns/op	 1074942 B/op	    1784 allocs/op
+PASS
+ok  	github.com/schigh/slice	63.267s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkInt32_IndexOf/10_elements-12         	157108544	         7.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_IndexOf/100_elements-12        	20061304	        59.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_IndexOf/1000_elements-12       	 2331433	       514 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_IndexOf/10000_elements-12      	  229420	      5135 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_IndexOf/100000_elements-12     	   23560	     50343 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Contains/10_elements-12        	160954598	         7.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Contains/100_elements-12       	20240340	        59.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Contains/1000_elements-12      	 2329983	       511 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Contains/10000_elements-12     	  202165	      5101 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Contains/100000_elements-12    	   23595	     52071 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_SortAsc/10_elements-12         	10530595	       121 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortAsc/100_elements-12        	 2329414	       517 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortAsc/1000_elements-12       	  304837	      3936 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortAsc/10000_elements-12      	   31483	     37524 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortAsc/100000_elements-12     	    3000	    381995 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortDesc/10_elements-12        	10566186	       112 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortDesc/100_elements-12       	 2371346	       509 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortDesc/1000_elements-12      	  304532	      3943 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortDesc/10000_elements-12     	   31675	     37405 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_SortDesc/100000_elements-12    	    3013	    381211 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt32_Reverse/10_elements-12         	171612008	         7.02 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Reverse/100_elements-12        	27057360	        43.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Reverse/1000_elements-12       	 2831812	       422 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Reverse/10000_elements-12      	  288333	      4182 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Reverse/100000_elements-12     	   28348	     42363 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Filter/10_elements-12          	23780980	        47.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkInt32_Filter/100_elements-12         	 3769244	       317 ns/op	     416 B/op	       1 allocs/op
+BenchmarkInt32_Filter/1000_elements-12        	  408238	      2897 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkInt32_Filter/10000_elements-12       	   42582	     29368 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkInt32_Filter/100000_elements-12      	    4156	    272641 ns/op	  401408 B/op	       1 allocs/op
+BenchmarkInt32_Each/10_elements-12            	74141442	        16.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Each/100_elements-12           	 8729656	       135 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Each/1000_elements-12          	  904550	      1342 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Each/10000_elements-12         	   94768	     12612 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Each/100000_elements-12        	    9554	    125059 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Map/10_elements-12             	57793826	        20.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Map/100_elements-12            	 6289803	       194 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Map/1000_elements-12           	  640792	      1886 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Map/10000_elements-12          	   63862	     18690 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Map/100000_elements-12         	    5942	    188115 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt32_Unique/10_elements-12          	 2749922	       437 ns/op	     162 B/op	       2 allocs/op
+BenchmarkInt32_Unique/100_elements-12         	  175076	      6675 ns/op	    2639 B/op	      17 allocs/op
+BenchmarkInt32_Unique/1000_elements-12        	   15668	     76462 ns/op	   39196 B/op	      60 allocs/op
+BenchmarkInt32_Unique/10000_elements-12       	    1758	    681697 ns/op	  314624 B/op	     213 allocs/op
+BenchmarkInt32_Unique/100000_elements-12      	     168	   6881150 ns/op	 2779764 B/op	    3895 allocs/op
+PASS
+ok  	github.com/schigh/slice	65.968s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkInt64_IndexOf/10_elements-12         	204489241	         6.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_IndexOf/100_elements-12        	26232260	        45.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_IndexOf/1000_elements-12       	 3608365	       331 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_IndexOf/10000_elements-12      	  375338	      3190 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_IndexOf/100000_elements-12     	   36517	     34245 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Contains/10_elements-12        	206906872	         6.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Contains/100_elements-12       	26579062	        45.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Contains/1000_elements-12      	 3631831	       331 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Contains/10000_elements-12     	  372764	      3197 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Contains/100000_elements-12    	   35737	     33680 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_SortAsc/10_elements-12         	10480318	       111 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortAsc/100_elements-12        	 2402718	       502 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortAsc/1000_elements-12       	  296571	      4006 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortAsc/10000_elements-12      	   31053	     38609 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortAsc/100000_elements-12     	    3000	    401600 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortDesc/10_elements-12        	 9833563	       113 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortDesc/100_elements-12       	 2396856	       504 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortDesc/1000_elements-12      	  301474	      3983 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortDesc/10000_elements-12     	   31057	     38238 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_SortDesc/100000_elements-12    	    2952	    394578 ns/op	      64 B/op	       2 allocs/op
+BenchmarkInt64_Reverse/10_elements-12         	170992116	         7.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Reverse/100_elements-12        	26476323	        44.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Reverse/1000_elements-12       	 2805816	       430 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Reverse/10000_elements-12      	  284332	      4210 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Reverse/100000_elements-12     	   28282	     42914 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Filter/10_elements-12          	22240772	        53.7 ns/op	      80 B/op	       1 allocs/op
+BenchmarkInt64_Filter/100_elements-12         	 3129488	       384 ns/op	     896 B/op	       1 allocs/op
+BenchmarkInt64_Filter/1000_elements-12        	  344066	      3409 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkInt64_Filter/10000_elements-12       	   34726	     34390 ns/op	   81920 B/op	       1 allocs/op
+BenchmarkInt64_Filter/100000_elements-12      	    3458	    351258 ns/op	  802816 B/op	       1 allocs/op
+BenchmarkInt64_Each/10_elements-12            	65780810	        18.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Each/100_elements-12           	 7465684	       159 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Each/1000_elements-12          	  797366	      1580 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Each/10000_elements-12         	   80362	     15189 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Each/100000_elements-12        	    7760	    160057 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Map/10_elements-12             	52747155	        21.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Map/100_elements-12            	 5978227	       197 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Map/1000_elements-12           	  612452	      1924 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Map/10000_elements-12          	   63936	     18755 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Map/100000_elements-12         	    6014	    192130 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInt64_Unique/10_elements-12          	 2583283	       467 ns/op	     259 B/op	       2 allocs/op
+BenchmarkInt64_Unique/100_elements-12         	  159307	      7049 ns/op	    4276 B/op	      18 allocs/op
+BenchmarkInt64_Unique/1000_elements-12        	   14379	     83550 ns/op	   61571 B/op	      74 allocs/op
+BenchmarkInt64_Unique/10000_elements-12       	    1642	    752915 ns/op	  509630 B/op	     321 allocs/op
+BenchmarkInt64_Unique/100000_elements-12      	     148	   7904735 ns/op	 4422011 B/op	    3991 allocs/op
+PASS
+ok  	github.com/schigh/slice	66.424s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkUInt_IndexOf/10_elements-12         	194172241	         6.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_IndexOf/100_elements-12        	24304588	        45.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_IndexOf/1000_elements-12       	 3627408	       330 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_IndexOf/10000_elements-12      	  366064	      3147 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_IndexOf/100000_elements-12     	   35581	     33545 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Contains/10_elements-12        	188189551	         6.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Contains/100_elements-12       	26284438	        46.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Contains/1000_elements-12      	 3589180	       326 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Contains/10000_elements-12     	  374470	      3225 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Contains/100000_elements-12    	   36328	     33615 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_SortAsc/10_elements-12         	10206198	       116 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortAsc/100_elements-12        	 2338828	       511 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortAsc/1000_elements-12       	  299116	      4013 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortAsc/10000_elements-12      	   31114	     39855 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortAsc/100000_elements-12     	    2958	    400643 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortDesc/10_elements-12        	10407044	       113 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortDesc/100_elements-12       	 2302664	       509 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortDesc/1000_elements-12      	  282813	      3994 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortDesc/10000_elements-12     	   31418	     38121 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_SortDesc/100000_elements-12    	    3000	    402266 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt_Reverse/10_elements-12         	169780965	         7.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Reverse/100_elements-12        	26866143	        44.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Reverse/1000_elements-12       	 2733980	       435 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Reverse/10000_elements-12      	  279423	      4233 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Reverse/100000_elements-12     	   28090	     43313 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Filter/10_elements-12          	18166633	        55.8 ns/op	      80 B/op	       1 allocs/op
+BenchmarkUInt_Filter/100_elements-12         	 3120955	       382 ns/op	     896 B/op	       1 allocs/op
+BenchmarkUInt_Filter/1000_elements-12        	  352532	      3392 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkUInt_Filter/10000_elements-12       	   34592	     34844 ns/op	   81920 B/op	       1 allocs/op
+BenchmarkUInt_Filter/100000_elements-12      	    3445	    332820 ns/op	  802816 B/op	       1 allocs/op
+BenchmarkUInt_Each/10_elements-12            	66077017	        18.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Each/100_elements-12           	 7488682	       159 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Each/1000_elements-12          	  806972	      1507 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Each/10000_elements-12         	   80058	     14992 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Each/100000_elements-12        	    7672	    150232 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Map/10_elements-12             	57885620	        20.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Map/100_elements-12            	 6239857	       192 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Map/1000_elements-12           	  646143	      1848 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Map/10000_elements-12          	   64219	     18424 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Map/100000_elements-12         	    6090	    185975 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt_Unique/10_elements-12          	 2605264	       458 ns/op	     259 B/op	       2 allocs/op
+BenchmarkUInt_Unique/100_elements-12         	  174896	      6873 ns/op	    4276 B/op	      18 allocs/op
+BenchmarkUInt_Unique/1000_elements-12        	   14768	     82537 ns/op	   61577 B/op	      74 allocs/op
+BenchmarkUInt_Unique/10000_elements-12       	    1645	    727110 ns/op	  509573 B/op	     321 allocs/op
+BenchmarkUInt_Unique/100000_elements-12      	     166	   7157291 ns/op	 4424203 B/op	    3996 allocs/op
+PASS
+ok  	github.com/schigh/slice	64.157s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkUInt8_IndexOf/10_elements-12         	201729447	         5.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_IndexOf/100_elements-12        	27335398	        43.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_IndexOf/1000_elements-12       	 6518281	       184 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_IndexOf/10000_elements-12      	 4122943	       289 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_IndexOf/100000_elements-12     	22420052	        53.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Contains/10_elements-12        	187456352	         6.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Contains/100_elements-12       	88534148	        13.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Contains/1000_elements-12      	31556569	        38.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Contains/10000_elements-12     	36286194	        30.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Contains/100000_elements-12    	 7239894	       164 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_SortAsc/10_elements-12         	10791837	       109 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortAsc/100_elements-12        	 2416275	       497 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortAsc/1000_elements-12       	  300948	      3947 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortAsc/10000_elements-12      	   31609	     38135 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortAsc/100000_elements-12     	    3261	    371365 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortDesc/10_elements-12        	10621516	       109 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortDesc/100_elements-12       	 2417311	       497 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortDesc/1000_elements-12      	  303334	      3926 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortDesc/10000_elements-12     	   30207	     37737 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_SortDesc/100000_elements-12    	    3183	    368818 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt8_Reverse/10_elements-12         	172159590	         7.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Reverse/100_elements-12        	27231804	        43.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Reverse/1000_elements-12       	 2835063	       424 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Reverse/10000_elements-12      	  278282	      4220 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Reverse/100000_elements-12     	   28671	     41603 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Filter/10_elements-12          	27095119	        42.9 ns/op	      16 B/op	       1 allocs/op
+BenchmarkUInt8_Filter/100_elements-12         	 4404884	       274 ns/op	     112 B/op	       1 allocs/op
+BenchmarkUInt8_Filter/1000_elements-12        	  489069	      2536 ns/op	    1024 B/op	       1 allocs/op
+BenchmarkUInt8_Filter/10000_elements-12       	   46664	     24636 ns/op	   10240 B/op	       1 allocs/op
+BenchmarkUInt8_Filter/100000_elements-12      	    4820	    242630 ns/op	  106496 B/op	       1 allocs/op
+BenchmarkUInt8_Each/10_elements-12            	73466042	        16.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Each/100_elements-12           	 8783968	       137 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Each/1000_elements-12          	  850554	      1395 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Each/10000_elements-12         	   95346	     12512 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Each/100000_elements-12        	    9301	    124971 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Map/10_elements-12             	59199074	        20.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Map/100_elements-12            	 6080559	       195 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Map/1000_elements-12           	  637128	      1892 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Map/10000_elements-12          	   63711	     18668 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Map/100000_elements-12         	    6439	    187255 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt8_Unique/10_elements-12          	 1917678	       606 ns/op	      82 B/op	       2 allocs/op
+BenchmarkUInt8_Unique/100_elements-12         	  144501	      8264 ns/op	    1371 B/op	      14 allocs/op
+BenchmarkUInt8_Unique/1000_elements-12        	   23575	     51041 ns/op	    6112 B/op	      29 allocs/op
+BenchmarkUInt8_Unique/10000_elements-12       	    3942	    309390 ns/op	   15335 B/op	      29 allocs/op
+BenchmarkUInt8_Unique/100000_elements-12      	     417	   2883567 ns/op	  111589 B/op	      29 allocs/op
+PASS
+ok  	github.com/schigh/slice	62.729s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkUInt16_IndexOf/10_elements-12         	159160378	         7.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_IndexOf/100_elements-12        	20011923	        57.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_IndexOf/1000_elements-12       	 2373273	       506 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_IndexOf/10000_elements-12      	  236254	      4952 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_IndexOf/100000_elements-12     	   56670	     21048 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Contains/10_elements-12        	157421062	         7.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Contains/100_elements-12       	20564331	        57.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Contains/1000_elements-12      	 2375325	       502 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Contains/10000_elements-12     	  237494	      4957 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Contains/100000_elements-12    	  174988	      6790 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_SortAsc/10_elements-12         	10229542	       114 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortAsc/100_elements-12        	 2326386	       515 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortAsc/1000_elements-12       	  297460	      3970 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortAsc/10000_elements-12      	   31746	     37568 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortAsc/100000_elements-12     	    3100	    371402 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortDesc/10_elements-12        	10748612	       111 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortDesc/100_elements-12       	 2402917	       501 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortDesc/1000_elements-12      	  305095	      3925 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortDesc/10000_elements-12     	   31996	     37870 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_SortDesc/100000_elements-12    	    3000	    369380 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt16_Reverse/10_elements-12         	171563053	         6.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Reverse/100_elements-12        	27774043	        43.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Reverse/1000_elements-12       	 2862576	       421 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Reverse/10000_elements-12      	  285284	      4158 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Reverse/100000_elements-12     	   28725	     41269 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Filter/10_elements-12          	25538528	        45.4 ns/op	      32 B/op	       1 allocs/op
+BenchmarkUInt16_Filter/100_elements-12         	 4196824	       286 ns/op	     208 B/op	       1 allocs/op
+BenchmarkUInt16_Filter/1000_elements-12        	  456949	      2616 ns/op	    2048 B/op	       1 allocs/op
+BenchmarkUInt16_Filter/10000_elements-12       	   46620	     25647 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkUInt16_Filter/100000_elements-12      	    4659	    250554 ns/op	  204800 B/op	       1 allocs/op
+BenchmarkUInt16_Each/10_elements-12            	66022942	        18.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Each/100_elements-12           	 7502184	       158 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Each/1000_elements-12          	  787956	      1497 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Each/10000_elements-12         	   80368	     14891 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Each/100000_elements-12        	    8136	    150229 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Map/10_elements-12             	59123181	        20.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Map/100_elements-12            	 6193026	       190 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Map/1000_elements-12           	  650904	      1870 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Map/10000_elements-12          	   64701	     18388 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Map/100000_elements-12         	    6262	    185388 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt16_Unique/10_elements-12          	 1958571	       614 ns/op	     114 B/op	       2 allocs/op
+BenchmarkUInt16_Unique/100_elements-12         	  136746	      8751 ns/op	    1875 B/op	      18 allocs/op
+BenchmarkUInt16_Unique/1000_elements-12        	   10000	    105668 ns/op	   26735 B/op	      52 allocs/op
+BenchmarkUInt16_Unique/10000_elements-12       	    1279	    937581 ns/op	  221241 B/op	     209 allocs/op
+BenchmarkUInt16_Unique/100000_elements-12      	     182	   6519273 ns/op	 1074871 B/op	    1781 allocs/op
+PASS
+ok  	github.com/schigh/slice	63.434s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkUInt32_IndexOf/10_elements-12         	162378200	         7.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_IndexOf/100_elements-12        	20535814	        58.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_IndexOf/1000_elements-12       	 2380732	       505 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_IndexOf/10000_elements-12      	  242018	      4944 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_IndexOf/100000_elements-12     	   24222	     49409 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Contains/10_elements-12        	158766850	         7.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Contains/100_elements-12       	20261724	        58.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Contains/1000_elements-12      	 2377797	       502 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Contains/10000_elements-12     	  240166	      4952 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Contains/100000_elements-12    	   24106	     49768 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_SortAsc/10_elements-12         	10681573	       111 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortAsc/100_elements-12        	 2402833	       502 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortAsc/1000_elements-12       	  303754	      3961 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortAsc/10000_elements-12      	   31632	     37645 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortAsc/100000_elements-12     	    3100	    382285 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortDesc/10_elements-12        	10630586	       110 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortDesc/100_elements-12       	 2418930	       499 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortDesc/1000_elements-12      	  303000	      3935 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortDesc/10000_elements-12     	   31641	     37770 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_SortDesc/100000_elements-12    	    3000	    379900 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt32_Reverse/10_elements-12         	172456994	         6.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Reverse/100_elements-12        	26949502	        43.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Reverse/1000_elements-12       	 2859684	       421 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Reverse/10000_elements-12      	  277323	      4154 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Reverse/100000_elements-12     	   28788	     41630 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Filter/10_elements-12          	24323142	        47.5 ns/op	      48 B/op	       1 allocs/op
+BenchmarkUInt32_Filter/100_elements-12         	 3832740	       314 ns/op	     416 B/op	       1 allocs/op
+BenchmarkUInt32_Filter/1000_elements-12        	  419353	      2876 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkUInt32_Filter/10000_elements-12       	   42645	     28162 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkUInt32_Filter/100000_elements-12      	    4206	    273440 ns/op	  401408 B/op	       1 allocs/op
+BenchmarkUInt32_Each/10_elements-12            	78386727	        15.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Each/100_elements-12           	 8797048	       135 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Each/1000_elements-12          	  717874	      1642 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Each/10000_elements-12         	   79770	     13262 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Each/100000_elements-12        	    9501	    125922 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Map/10_elements-12             	57504960	        20.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Map/100_elements-12            	 6232660	       191 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Map/1000_elements-12           	  619514	      1850 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Map/10000_elements-12          	   64543	     18353 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Map/100000_elements-12         	    6561	    182793 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt32_Unique/10_elements-12          	 2741658	       438 ns/op	     162 B/op	       2 allocs/op
+BenchmarkUInt32_Unique/100_elements-12         	  184946	      6499 ns/op	    2639 B/op	      17 allocs/op
+BenchmarkUInt32_Unique/1000_elements-12        	   15812	     75801 ns/op	   39196 B/op	      60 allocs/op
+BenchmarkUInt32_Unique/10000_elements-12       	    1748	    679630 ns/op	  314682 B/op	     213 allocs/op
+BenchmarkUInt32_Unique/100000_elements-12      	     177	   6746980 ns/op	 2777615 B/op	    3893 allocs/op
+PASS
+ok  	github.com/schigh/slice	65.632s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkUInt64_IndexOf/10_elements-12         	189844552	         6.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_IndexOf/100_elements-12        	26677029	        44.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_IndexOf/1000_elements-12       	 3679792	       324 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_IndexOf/10000_elements-12      	  383125	      3135 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_IndexOf/100000_elements-12     	   36229	     33111 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Contains/10_elements-12        	204385555	         5.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Contains/100_elements-12       	27466272	        43.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Contains/1000_elements-12      	 3665414	       326 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Contains/10000_elements-12     	  392138	      3173 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Contains/100000_elements-12    	   36433	     32993 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_SortAsc/10_elements-12         	10464991	       111 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortAsc/100_elements-12        	 2408522	       500 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortAsc/1000_elements-12       	  305155	      3967 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortAsc/10000_elements-12      	   31471	     38329 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortAsc/100000_elements-12     	    2809	    395428 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortDesc/10_elements-12        	10535928	       112 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortDesc/100_elements-12       	 2385921	       502 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortDesc/1000_elements-12      	  298178	      3943 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortDesc/10000_elements-12     	   31533	     37964 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_SortDesc/100000_elements-12    	    2950	    393137 ns/op	      64 B/op	       2 allocs/op
+BenchmarkUInt64_Reverse/10_elements-12         	171283273	         7.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Reverse/100_elements-12        	27409966	        43.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Reverse/1000_elements-12       	 2812532	       423 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Reverse/10000_elements-12      	  282738	      4159 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Reverse/100000_elements-12     	   28440	     41730 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Filter/10_elements-12          	20184501	        52.8 ns/op	      80 B/op	       1 allocs/op
+BenchmarkUInt64_Filter/100_elements-12         	 3195192	       377 ns/op	     896 B/op	       1 allocs/op
+BenchmarkUInt64_Filter/1000_elements-12        	  319849	      3401 ns/op	    8192 B/op	       1 allocs/op
+BenchmarkUInt64_Filter/10000_elements-12       	   34723	     34502 ns/op	   81920 B/op	       1 allocs/op
+BenchmarkUInt64_Filter/100000_elements-12      	    3428	    338598 ns/op	  802816 B/op	       1 allocs/op
+BenchmarkUInt64_Each/10_elements-12            	69303046	        17.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Each/100_elements-12           	 7627623	       157 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Each/1000_elements-12          	  804182	      1492 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Each/10000_elements-12         	   80540	     14901 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Each/100000_elements-12        	    7600	    149966 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Map/10_elements-12             	58359266	        20.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Map/100_elements-12            	 6261296	       191 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Map/1000_elements-12           	  648388	      1844 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Map/10000_elements-12          	   65109	     18347 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Map/100000_elements-12         	    6451	    185698 ns/op	       0 B/op	       0 allocs/op
+BenchmarkUInt64_Unique/10_elements-12          	 2600778	       459 ns/op	     259 B/op	       2 allocs/op
+BenchmarkUInt64_Unique/100_elements-12         	  174986	      6863 ns/op	    4276 B/op	      18 allocs/op
+BenchmarkUInt64_Unique/1000_elements-12        	   14734	     81243 ns/op	   61565 B/op	      73 allocs/op
+BenchmarkUInt64_Unique/10000_elements-12       	    1642	    726943 ns/op	  509622 B/op	     321 allocs/op
+BenchmarkUInt64_Unique/100000_elements-12      	     166	   7147324 ns/op	 4424078 B/op	    3992 allocs/op
+PASS
+ok  	github.com/schigh/slice	64.060s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkFloat32_IndexOf/10_elements-12         	159552939	         7.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_IndexOf/100_elements-12        	20652944	        56.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_IndexOf/1000_elements-12       	 2383137	       505 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_IndexOf/10000_elements-12      	  232880	      4965 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_IndexOf/100000_elements-12     	   24144	     49498 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Contains/10_elements-12        	152452503	         7.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Contains/100_elements-12       	20633491	        57.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Contains/1000_elements-12      	 2389839	       501 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Contains/10000_elements-12     	  243321	      5000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Contains/100000_elements-12    	   24380	     49430 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_SortAsc/10_elements-12         	10438833	       112 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortAsc/100_elements-12        	 2371125	       503 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortAsc/1000_elements-12       	  301071	      3939 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortAsc/10000_elements-12      	   31426	     37553 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortAsc/100000_elements-12     	    3000	    381359 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortDesc/10_elements-12        	10492449	       112 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortDesc/100_elements-12       	 2412045	       501 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortDesc/1000_elements-12      	  300411	      3938 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortDesc/10000_elements-12     	   31281	     37784 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_SortDesc/100000_elements-12    	    3000	    381312 ns/op	      64 B/op	       2 allocs/op
+BenchmarkFloat32_Reverse/10_elements-12         	173843238	         6.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Reverse/100_elements-12        	30085460	        39.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Reverse/1000_elements-12       	 3139213	       379 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Reverse/10000_elements-12      	  316855	      3731 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Reverse/100000_elements-12     	   31990	     37381 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Filter/10_elements-12          	24142635	        47.7 ns/op	      48 B/op	       1 allocs/op
+BenchmarkFloat32_Filter/100_elements-12         	 3722748	       312 ns/op	     416 B/op	       1 allocs/op
+BenchmarkFloat32_Filter/1000_elements-12        	  412172	      2877 ns/op	    4096 B/op	       1 allocs/op
+BenchmarkFloat32_Filter/10000_elements-12       	   42420	     28274 ns/op	   40960 B/op	       1 allocs/op
+BenchmarkFloat32_Filter/100000_elements-12      	    4233	    273143 ns/op	  401408 B/op	       1 allocs/op
+BenchmarkFloat32_Each/10_elements-12            	68035216	        17.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Each/100_elements-12           	 7623208	       156 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Each/1000_elements-12          	  805946	      1490 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Each/10000_elements-12         	   79990	     14941 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Each/100000_elements-12        	    7998	    148802 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Map/10_elements-12             	56525330	        20.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Map/100_elements-12            	 6249958	       192 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Map/1000_elements-12           	  626122	      1857 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Map/10000_elements-12          	   63518	     18898 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Map/100000_elements-12         	    5970	    187100 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFloat32_Unique/10_elements-12          	 1892800	       632 ns/op	     162 B/op	       2 allocs/op
+BenchmarkFloat32_Unique/100_elements-12         	  121317	      9072 ns/op	    2640 B/op	      17 allocs/op
+BenchmarkFloat32_Unique/1000_elements-12        	   10000	    109496 ns/op	   39198 B/op	      60 allocs/op
+BenchmarkFloat32_Unique/10000_elements-12       	    1240	    969201 ns/op	  314739 B/op	     214 allocs/op
+BenchmarkFloat32_Unique/100000_elements-12      	     124	   9617150 ns/op	 2778013 B/op	    3881 allocs/op
+PASS
+ok  	github.com/schigh/slice	64.289s
+PASS
+ok  	github.com/schigh/slice	0.212s
+goos: darwin
+goarch: amd64
+pkg: github.com/schigh/slice
+BenchmarkString_IndexOf/10_elements-12         	100000000	        11.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_IndexOf/100_elements-12        	18875080	        62.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_IndexOf/1000_elements-12       	 1786064	       678 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_IndexOf/10000_elements-12      	13290397	        89.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_IndexOf/100000_elements-12     	 7166780	       167 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Contains/10_elements-12        	153282250	         7.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Contains/100_elements-12       	18389462	        65.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Contains/1000_elements-12      	 1629967	       727 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Contains/10000_elements-12     	 1870251	       636 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Contains/100000_elements-12    	  239859	      4902 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_SortAsc/10_elements-12         	 7871110	       150 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortAsc/100_elements-12        	 1301372	       922 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortAsc/1000_elements-12       	  107647	     10982 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortAsc/10000_elements-12      	    7303	    163675 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortAsc/100000_elements-12     	     673	   1704051 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortDesc/10_elements-12        	 7812345	       154 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortDesc/100_elements-12       	 1307380	       922 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortDesc/1000_elements-12      	  110377	     10779 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortDesc/10000_elements-12     	    7237	    165467 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_SortDesc/100000_elements-12    	     672	   1708479 ns/op	      64 B/op	       2 allocs/op
+BenchmarkString_Reverse/10_elements-12         	99101667	        12.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Reverse/100_elements-12        	12797755	        92.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Reverse/1000_elements-12       	 1316260	       919 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Reverse/10000_elements-12      	  131476	      9053 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Reverse/100000_elements-12     	   13114	     91331 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Filter/10_elements-12          	 9412200	       126 ns/op	     160 B/op	       1 allocs/op
+BenchmarkString_Filter/100_elements-12         	 1268995	       959 ns/op	    1792 B/op	       1 allocs/op
+BenchmarkString_Filter/1000_elements-12        	  140263	      8790 ns/op	   16384 B/op	       1 allocs/op
+BenchmarkString_Filter/10000_elements-12       	   13648	     89953 ns/op	  163840 B/op	       1 allocs/op
+BenchmarkString_Filter/100000_elements-12      	    1130	   1015392 ns/op	 1605633 B/op	       1 allocs/op
+BenchmarkString_Each/10_elements-12            	78474235	        15.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Each/100_elements-12           	 8636316	       140 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Each/1000_elements-12          	  877374	      1291 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Each/10000_elements-12         	   84210	     13730 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Each/100000_elements-12        	    8588	    142009 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Map/10_elements-12             	39711944	        29.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Map/100_elements-12            	 4201940	       282 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Map/1000_elements-12           	  436488	      2777 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Map/10000_elements-12          	   42694	     27644 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Map/100000_elements-12         	    4077	    286075 ns/op	       0 B/op	       0 allocs/op
+BenchmarkString_Unique/10_elements-12          	 1738462	       677 ns/op	     483 B/op	       2 allocs/op
+BenchmarkString_Unique/100_elements-12         	  116145	     10306 ns/op	    7412 B/op	      10 allocs/op
+BenchmarkString_Unique/1000_elements-12        	    9216	    132548 ns/op	  112721 B/op	      36 allocs/op
+BenchmarkString_Unique/10000_elements-12       	    1048	   1142001 ns/op	  879510 B/op	     172 allocs/op
+BenchmarkString_Unique/100000_elements-12      	      96	  11644149 ns/op	 7434099 B/op	    3151 allocs/op
+PASS
+ok  	github.com/schigh/slice	66.362s
