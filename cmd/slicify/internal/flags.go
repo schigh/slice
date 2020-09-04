@@ -11,14 +11,17 @@ const (
 	tryEachOperation = "tryeach"
 	ifEachOperation  = "ifeach"
 	filterOperation  = "filter"
+	chunkOperation   = "chunk"
 	allOperation     = "all"
 )
 
-var re *regexp.Regexp
+var (
+	re *regexp.Regexp
+)
 
 func init() {
 	// https://regex101.com/r/ydgkha/1
-	re = regexp.MustCompile(`(?m)(map|ifeach|tryeach|each|filter|all)(\(((?P<bv>byvalue)|(?P<cp>copy)|,)+\))?`)
+	re = regexp.MustCompile(`(?m)(map|ifeach|tryeach|each|filter|chunk|all)(\(((?P<bv>byvalue)|(?P<cp>copy)|,)+\))?`)
 }
 
 // OperationsFromFlags returns all operations in the flag
@@ -35,22 +38,21 @@ func OperationsFromFlags(flags string) ([]Operation, error) {
 			return allOps(operation.ByRef, operation.Copy), nil
 		case mapOperation:
 			operation.Template = MapTmpl
-			operation.Name = "map"
 		case filterOperation:
 			operation.Template = FilterTmpl
-			operation.Name = "filter"
 		case eachOperation:
 			operation.Template = EachTmpl
-			operation.Name = "each"
 		case tryEachOperation:
 			operation.Template = TryEachTmpl
-			operation.Name = "tryeach"
 		case ifEachOperation:
 			operation.Template = IfEachTmpl
-			operation.Name = "ifeach"
+		case chunkOperation:
+			operation.Template = ChunkTmpl
 		default:
 			return ops, fmt.Errorf("unknown operation: '%s'", op)
 		}
+
+		operation.Name = op
 
 		ops = append(ops, operation)
 	}
@@ -64,31 +66,37 @@ func allOps(br, cp bool) []Operation {
 			Template: MapTmpl,
 			ByRef:    br,
 			Copy:     cp,
-			Name:     "map",
+			Name:     mapOperation,
 		},
 		{
 			Template: FilterTmpl,
 			ByRef:    br,
 			Copy:     cp,
-			Name:     "filter",
+			Name:     filterOperation,
 		},
 		{
 			Template: EachTmpl,
 			ByRef:    br,
 			Copy:     cp,
-			Name:     "each",
+			Name:     eachOperation,
 		},
 		{
 			Template: TryEachTmpl,
 			ByRef:    br,
 			Copy:     cp,
-			Name:     "tryeach",
+			Name:     tryEachOperation,
 		},
 		{
 			Template: IfEachTmpl,
 			ByRef:    br,
 			Copy:     cp,
-			Name:     "ifeach",
+			Name:     ifEachOperation,
+		},
+		{
+			Template: ChunkTmpl,
+			ByRef:    br,
+			Copy:     cp,
+			Name:     chunkOperation,
 		},
 	}
 }

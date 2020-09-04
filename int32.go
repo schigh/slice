@@ -132,7 +132,7 @@ func (slc Int32) Map(f func(int32) int32) {
 	}
 }
 
-// Chunk will divide the slice of int32 into smaller slices defined by chunk length
+// Chunk will divide the slice of int32 into smaller slicify defined by chunk length
 func (slc Int32) Chunk(size int) [][]int32 {
 	l := len(slc)
 	if l == 0 || size <= 0 {

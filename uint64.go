@@ -132,7 +132,7 @@ func (slc UInt64) Map(f func(uint64) uint64) {
 	}
 }
 
-// Chunk will divide the slice of uint64 into smaller slices defined by chunk length
+// Chunk will divide the slice of uint64 into smaller slicify defined by chunk length
 func (slc UInt64) Chunk(size int) [][]uint64 {
 	l := len(slc)
 	if l == 0 || size <= 0 {

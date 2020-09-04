@@ -104,16 +104,16 @@ Check out the GoDoc for more information.
 
 ##  Generator
 
-The slice generator uses `go:generate` to add slice functionality to your existing structs. You may choose which features you'd like to add by setting them in the `generate` command.  For example:
+The slice generator `slicify` uses `go:generate` to add slice functionality to your existing structs. You may choose which features you'd like to add by setting them in the `generate` command.  For example:
 
 ```
-//go:generate slices User map filter each
+//go:generate slicify User map filter each
 ```
 
 Will generate the `Map`, `Filter`, and `Each` functionality (see below) on a User struct's slice type.  You could also just say you want everything:
 
 ```
-//go:generate slices User all
+//go:generate slicify User all
 ```
 
 This will generate all functions produced by the tool.

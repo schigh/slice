@@ -132,7 +132,7 @@ func (slc Int8) Map(f func(int8) int8) {
 	}
 }
 
-// Chunk will divide the slice of int8 into smaller slices defined by chunk length
+// Chunk will divide the slice of int8 into smaller slicify defined by chunk length
 func (slc Int8) Chunk(size int) [][]int8 {
 	l := len(slc)
 	if l == 0 || size <= 0 {

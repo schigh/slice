@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/schigh/slice"
-	"github.com/schigh/slice/cmd/internal"
+	"github.com/schigh/slice/cmd/slicify/internal"
 )
 
 var (
@@ -27,7 +27,7 @@ var (
 func main() {
 	// make sure args are ok
 	if len(os.Args) < 2 {
-		internal.PrintErr("usage: slices <struct> ...<funcs>")
+		internal.PrintErr("usage: slicify <struct> ...<funcs>")
 		os.Exit(1)
 	}
 
@@ -55,13 +55,6 @@ func main() {
 	}
 	targetFile = path.Join(pwd, targetFile)
 
-	// inform user what is being created
-	var pointerStr string
-	if pointerOverride {
-		pointerStr = "pointer "
-	}
-	internal.PrintInfo("generating %sslices for struct %s in %s", pointerStr, targetStruct, path.Base(targetFile))
-
 	// make sure a struct by the provided name lives in this file
 	found, parseErr := parseFileAndLocateStruct(targetFile, targetStruct)
 	if parseErr != nil {
@@ -73,6 +66,13 @@ func main() {
 		internal.PrintErr("unable to locate struct %s in file %s", targetStruct, targetFile)
 		os.Exit(1)
 	}
+
+	// inform user what is being created
+	var pointerStr string
+	if pointerOverride {
+		pointerStr = "pointer "
+	}
+	internal.PrintInfo("generating %sslices for struct %s in %s", pointerStr, targetStruct, path.Base(targetFile))
 
 	// determine scope
 	scope := slice.String(os.Args[2:]).Unique().Value()

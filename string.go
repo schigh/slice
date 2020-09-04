@@ -132,7 +132,7 @@ func (slc String) Map(f func(string) string) {
 	}
 }
 
-// Chunk will divide the slice of string into smaller slices defined by chunk length
+// Chunk will divide the slice of string into smaller slicify defined by chunk length
 func (slc String) Chunk(size int) [][]string {
 	l := len(slc)
 	if l == 0 || size <= 0 {

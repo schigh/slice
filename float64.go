@@ -132,7 +132,7 @@ func (slc Float64) Map(f func(float64) float64) {
 	}
 }
 
-// Chunk will divide the slice of float64 into smaller slices defined by chunk length
+// Chunk will divide the slice of float64 into smaller slicify defined by chunk length
 func (slc Float64) Chunk(size int) [][]float64 {
 	l := len(slc)
 	if l == 0 || size <= 0 {

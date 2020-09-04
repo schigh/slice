@@ -5,6 +5,10 @@ base:
 		go run base.go; \
 	}
 
+.PHONY: slicify
+slicify:
+	go build -o "${GOBIN}/slicify" ./cmd/slicify/slicify.go
+
 .PHONY: test
 test:
 	go test -race -v -cover ./...

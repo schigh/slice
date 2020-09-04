@@ -132,7 +132,7 @@ func (slc UInt16) Map(f func(uint16) uint16) {
 	}
 }
 
-// Chunk will divide the slice of uint16 into smaller slices defined by chunk length
+// Chunk will divide the slice of uint16 into smaller slicify defined by chunk length
 func (slc UInt16) Chunk(size int) [][]uint16 {
 	l := len(slc)
 	if l == 0 || size <= 0 {
