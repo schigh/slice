@@ -47,7 +47,7 @@ For the above types, the following operations are supported (_x_ is the type in 
 
 #### Performance
 
-Performance benchmarks can be found in [benchmarks.txt](./_data/benchmarks.txt).
+Performance benchmarks can be found in [benchmarks.txt](./_data/benchmark.txt).
 
 **A note about performance, benchmarks, etc**
 
