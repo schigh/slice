@@ -104,13 +104,16 @@ Check out the GoDoc for more information.
 
 ##  Generator
 
-The slice generator `slicify` uses `go:generate` to add slice functionality to your existing structs. You may choose which features you'd like to add by setting them in the `generate` command.  For example:
+The slice generator `slicify` uses `go:generate` to add slice functionality to 
+existing structs or interfaces. You may choose which features you'd like to add 
+by setting them in the `generate` command.  For example:
 
 ```
 //go:generate slicify User map filter each
 ```
 
-Will generate the `Map`, `Filter`, and `Each` functionality (see below) on a User struct's slice type.  You could also just say you want everything:
+Will generate the `Map`, `Filter`, and `Each` functionality (see below) on a User 
+struct's slice type.  You could also just say you want everything:
 
 ```
 //go:generate slicify User all
@@ -121,7 +124,9 @@ This will generate all functions produced by the tool.
 ### Generator Options
 
 #### Closures
-Some generated functions take as their receiver a function that operates on every member of the slice.  By default, these receivers use a function where each member is passed by reference.  For example, the generated `Filter` function on a `User` struct:
+Some generated functions take as their receiver a function that operates on every member of the slice.  
+By default, these receivers use a function where each member is passed by reference.  
+For example, the generated `Filter` function on a `User` struct:
 
 ```go
 // Filter evaluates every element in the slice, and returns all User 
@@ -143,7 +148,7 @@ The user-defined function receives a pointer to `User` by default.
 If instead you want your slice functions to operate by value, you can modify your generator tags like so:
 
 ```
-//go:generate slices User filter(byvalue)
+//go:generate slicify User filter byvalue
 ```
 
 This would produce the following function:
@@ -163,14 +168,19 @@ func (slc UserSlice) Filter(f func(User) bool) UserSlice {
 }
 ```
 
+***Note***
+Slice types generated for interfaces are _always_ handled by value.
+
 #### Pointer Slices
-You can also generate pointer slices by prepending an asterisk to your struct name in the `go generate` directive, like so:
+You can also generate pointer slices by prepending an asterisk to your struct name 
+in the `go generate` directive, like so:
 
 ```
-//go:generate slices *User all
+//go:generate slicify *User all
 ```
 
-This will generate a type called `UserPtrSlice`, which is an alias of `[]*User`.  All slice functions take a pointer receiver, for example:
+This will generate a type called `UserPtrSlice`, which is an alias of `[]*User`.  
+All slice functions take a pointer receiver, for example:
 
 ```go
 func (slc UserPtrSlice) Map(f func(*User) *User) {

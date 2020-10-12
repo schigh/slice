@@ -1,8 +1,9 @@
 package internal
 
 import (
-	"fmt"
 	"regexp"
+
+	"github.com/schigh/slice"
 )
 
 const (
@@ -13,6 +14,7 @@ const (
 	filterOperation  = "filter"
 	chunkOperation   = "chunk"
 	allOperation     = "all"
+	byvalue          = "byvalue"
 )
 
 var (
@@ -20,82 +22,102 @@ var (
 )
 
 func init() {
-	// https://regex101.com/r/ydgkha/1
-	re = regexp.MustCompile(`(?m)(map|ifeach|tryeach|each|filter|chunk|all)(\(((?P<bv>byvalue)|(?P<cp>copy)|,)+\))?`)
+	// https://regex101.com/r/ydgkha/2
+	re = regexp.MustCompile(`((?:map|each|filter|ifeach|tryeach|chunk)(?:\s(?:map|each|filter|ifeach|tryeach|chunk))*|all)(?:\sbyvalue)?`)
 }
 
 // OperationsFromFlags returns all operations in the flag
-func OperationsFromFlags(flags string) ([]Operation, error) {
+func OperationsFromFlags(flags string, forceByValue bool) ([]Operation, error) {
+	matches := slice.String(re.FindAllString(flags, -1))
+
+	var byValue bool
+	if matches.Contains(byvalue) {
+		byValue = true
+	}
+
+	byValue = byValue || forceByValue
+
+	if matches.Contains(allOperation) {
+		return allOps(!byValue), nil
+	}
+
 	var ops []Operation
-	matches := re.FindAllSubmatch([]byte(flags), -1)
-	for _, m := range matches {
-		operation := Operation{}
-		operation.ByRef = len(m[4]) <= 0
-		operation.Copy = len(m[5]) > 0
-		op := string(m[1])
-		switch op {
-		case allOperation:
-			return allOps(operation.ByRef, operation.Copy), nil
-		case mapOperation:
-			operation.Template = MapTmpl
-		case filterOperation:
-			operation.Template = FilterTmpl
-		case eachOperation:
-			operation.Template = EachTmpl
-		case tryEachOperation:
-			operation.Template = TryEachTmpl
-		case ifEachOperation:
-			operation.Template = IfEachTmpl
-		case chunkOperation:
-			operation.Template = ChunkTmpl
-		default:
-			return ops, fmt.Errorf("unknown operation: '%s'", op)
-		}
 
-		operation.Name = op
+	if matches.Contains(mapOperation) {
+		ops = append(ops, Operation{
+			Template: MapTmpl,
+			ByRef:    !byValue,
+		})
+	}
 
-		ops = append(ops, operation)
+	if matches.Contains(eachOperation) {
+		ops = append(ops, Operation{
+			Template: EachTmpl,
+			ByRef:    !byValue,
+		})
+	}
+
+	if matches.Contains("filter") {
+		ops = append(ops, Operation{
+			Template: FilterTmpl,
+			ByRef:    !byValue,
+		})
+	}
+
+	if matches.Contains("ifeach") {
+		ops = append(ops, Operation{
+			Template: IfEachTmpl,
+			ByRef:    !byValue,
+		})
+	}
+
+	if matches.Contains("tryeach") {
+		ops = append(ops, Operation{
+			Template: TryEachTmpl,
+			ByRef:    !byValue,
+		})
+	}
+
+	if matches.Contains("chunk") {
+		ops = append(ops, Operation{
+			Template: ChunkTmpl,
+			ByRef:    !byValue,
+		})
 	}
 
 	return ops, nil
 }
 
-func allOps(br, cp bool) []Operation {
+func allOps(br bool) []Operation {
 	return []Operation{
 		{
 			Template: MapTmpl,
 			ByRef:    br,
-			Copy:     cp,
 			Name:     mapOperation,
 		},
 		{
 			Template: FilterTmpl,
 			ByRef:    br,
-			Copy:     cp,
 			Name:     filterOperation,
 		},
 		{
 			Template: EachTmpl,
 			ByRef:    br,
-			Copy:     cp,
 			Name:     eachOperation,
 		},
 		{
 			Template: TryEachTmpl,
 			ByRef:    br,
-			Copy:     cp,
 			Name:     tryEachOperation,
 		},
 		{
 			Template: IfEachTmpl,
 			ByRef:    br,
-			Copy:     cp,
 			Name:     ifEachOperation,
 		},
 		{
 			Template: ChunkTmpl,
 			ByRef:    br,
-			Copy:     cp,
 			Name:     chunkOperation,
 		},
 	}

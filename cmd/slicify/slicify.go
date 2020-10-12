@@ -20,8 +20,16 @@ import (
 
 var (
 	targetPackage string
-	targetStruct  string
+	targetType    string
 	targetFile    string
+)
+
+type fileParseResult int
+const (
+	foundNone fileParseResult = iota
+	foundError
+	foundStruct
+	foundInterface
 )
 
 func main() {
@@ -39,12 +47,12 @@ func main() {
 		internal.PrintErr("both GOPACKAGE and GOFILE environment variables are required")
 	}
 
-	targetStruct = os.Args[1]
+	targetType = os.Args[1]
 	// test for pointer
 	var pointerOverride bool
-	if targetStruct[0] == '*' {
+	if targetType[0] == '*' {
 		pointerOverride = true
-		targetStruct = targetStruct[1:]
+		targetType = targetType[1:]
 	}
 
 	// assemble file path
@@ -55,15 +63,21 @@ func main() {
 	}
 	targetFile = path.Join(pwd, targetFile)
 
-	// make sure a struct by the provided name lives in this file
-	found, parseErr := parseFileAndLocateStruct(targetFile, targetStruct)
+	found, parseErr := locateType(targetFile, targetType)
 	if parseErr != nil {
 		internal.PrintErr("error parsing file %s: %v", targetFile, parseErr)
 		os.Exit(1)
 	}
 
-	if !found {
-		internal.PrintErr("unable to locate struct %s in file %s", targetStruct, targetFile)
+	switch found {
+	case foundInterface:
+		// force the pointer off
+		if pointerOverride {
+			pointerOverride = false
+			internal.PrintInfo("ignoring pointer for interface type %s", targetType)
+		}
+	case foundNone:
+		internal.PrintErr("unable to locate struct or interface %s in file %s", targetType, targetFile)
 		os.Exit(1)
 	}
 
@@ -72,12 +86,12 @@ func main() {
 	if pointerOverride {
 		pointerStr = "pointer "
 	}
-	internal.PrintInfo("generating %sslices for struct %s in %s", pointerStr, targetStruct, path.Base(targetFile))
+	internal.PrintInfo("generating %sslices for type %s in %s", pointerStr, targetType, path.Base(targetFile))
 
 	// determine scope
 	scope := slice.String(os.Args[2:]).Unique().Value()
 	flags := strings.Join(scope, " ")
-	operations, opsErr := internal.OperationsFromFlags(flags)
+	operations, opsErr := internal.OperationsFromFlags(flags, found == foundInterface)
 	if opsErr != nil {
 		internal.PrintErr(opsErr.Error())
 		os.Exit(1)
@@ -96,7 +110,7 @@ func main() {
 		PO:           pointerOverride,
 		PackageName:  targetPackage,
 		GenDate:      time.Now().Format(time.RFC1123Z),
-		SourceStruct: targetStruct,
+		SourceStruct: targetType,
 		Operations:   operations,
 	}
 
@@ -107,41 +121,53 @@ func main() {
 
 	// if it's a pointer slice, create a filename that indicates a pointer
 	if pointerOverride {
-		targetStruct = fmt.Sprintf("%s_ptr", targetStruct)
+		targetType = fmt.Sprintf("%s_ptr", targetType)
 	}
-	outfile := path.Join(path.Dir(targetFile), fmt.Sprintf("%s_slices.go", strings.ToLower(targetStruct)))
+	outfile := path.Join(path.Dir(targetFile), fmt.Sprintf("%s_slices.go", strings.ToLower(targetType)))
 	if writeFileErr := ioutil.WriteFile(outfile, fileBytes, 0644); writeFileErr != nil {
 		internal.PrintErr("error writing to file %s: %v", targetFile, writeFileErr)
 		os.Exit(1)
 	}
 
 	internal.PrintSuccess("wrote file %s", outfile)
-
 }
 
-func parseFileAndLocateStruct(filePath, targetStruct string) (bool, error) {
+func locateType(filePath, targetType string) (fileParseResult, error) {
 	fset := token.NewFileSet()
 	node, parseErr := parser.ParseFile(fset, filePath, nil, parser.AllErrors)
 	if parseErr != nil {
-		return false, parseErr
+		return foundError, parseErr
 	}
 
-	var found bool
-	var structName string
+	var structFound, ifaceFound bool
+	var typeName string
+
 	ast.Inspect(node, func(n ast.Node) bool {
 		switch t := n.(type) {
 		case *ast.TypeSpec:
-			structName = t.Name.String()
+			typeName = t.Name.String()
 		case *ast.StructType:
-			if structName == targetStruct {
-				found = true
+			if typeName == targetType {
+				structFound = true
+				return false
+			}
+		case *ast.InterfaceType:
+			if typeName == targetType {
+				ifaceFound = true
 				return false
 			}
 		}
 		return true
 	})
 
-	return found, nil
+	if structFound {
+		return foundStruct, nil
+	}
+	if ifaceFound {
+		return foundInterface, nil
+	}
+
+	return foundNone, nil
 }
 
 func generateOutBytes(tmpl *internal.Template, overridePtr bool) ([]byte, error) {

@@ -4,7 +4,6 @@ package internal
 type Operation struct {
 	Template      SliceTemplate
 	ByRef         bool
-	Copy          bool
 	Tests         bool
 	Name          string
 	PackageName   string // added on at template execute time
